@@ -1,0 +1,42 @@
+package WebDriver;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class Book {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\spsar\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://blazedemo.com/");
+		WebElement no = driver.findElement(By.name("fromPort"));
+	      Select sle = new Select(no);
+	      sle.selectByVisibleText("Paris");
+	      WebElement no1 =driver.findElement(By.name("toPort"));
+	      Select sle1 = new Select(no1);
+	      sle1.selectByValue("New York");
+	      Thread.sleep(1000);
+	      driver.findElement(By.xpath("//input[@type='submit']")).click();
+	      driver.findElement(By.xpath("//input[@class='btn btn-small']")).click();
+	      driver.findElement(By.id("inputName")).sendKeys("Ojas Patil");
+	      driver.findElement(By.id("address")).sendKeys("india");
+	      driver.findElement(By.id("city")).sendKeys("Nagpur");
+	      driver.findElement(By.id("state")).sendKeys("Maharashtra");
+	      Thread.sleep(500);
+	      driver.findElement(By.id("zipCode")).sendKeys("440015");
+	      driver.findElement(By.id("creditCardNumber")).sendKeys("245897645");
+	        driver.findElement(By.id("creditCardMonth")).clear();
+	      driver.findElement(By.id("creditCardMonth")).sendKeys("09");
+	        driver.findElement(By.id("creditCardYear")).clear();
+	      driver.findElement(By.id("creditCardYear")).sendKeys("2022");
+	      driver.findElement(By.id("nameOnCard")).sendKeys("Ojas Patil");
+	      Thread.sleep(2000);
+	      driver.findElement(By.xpath("//input[@class='btn btn-primary']")).click();
+	     Thread.sleep(1000);
+	}
+
+}
