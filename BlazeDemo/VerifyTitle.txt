@@ -1,0 +1,32 @@
+package WebDriver;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+
+public class Verifytitle {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\spsar\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://blazedemo.com/");
+		//Actual title
+		driver.manage().window().maximize();
+		String ActualResult = driver.getTitle();
+		String ExpectedResult = "BlazeDemo";
+		if(ActualResult.equals(ExpectedResult))
+		{
+			System.out.println("Pass:The Blazedemo application is opened succesfully");
+			
+		}else{
+			System.out.println("Fail:The Blazedemo application is not opened successfully");
+		}
+		
+		
+		
+		// TODO Auto-generated method stub
+
+	}
+
+}
